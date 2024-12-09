@@ -3,92 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Card</title>
+    <title>Adam Brůha's Business Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Make the body fill the entire page with a black background */
-        body, html {
-            height: 100%;
+        body {
             margin: 0;
+            padding: 0;
+            font-family: 'Courier Prime', monospace;
+            background-color: black;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: black; /* Black background */
-            color: white; /* White text */
-            font-family: Arial, sans-serif; /* Use Arial instead of Courier */
-        }
-
-        /* Centered text styling */
-        .centered-text {
-            font-size: 24px;
+            height: 100vh;
             text-align: center;
+            overflow: hidden;
         }
-
-        /* Common typing animation for each paragraph */
+        
+        .container {
+            width: 90%;
+            max-width: 400px;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        
         .typing {
             display: inline-block;
-            white-space: nowrap; /* Prevent text from wrapping */
-            overflow: hidden; /* Hide the text until it is "typed" */
-            border-right: 4px solid white; /* Simulate a cursor */
-            width: 0; /* Start with no visible width */
-            animation: typing 1s steps(40) 0.5s forwards, blink 0.75s step-end infinite; /* Typing and blinking cursor */
+            border-right: 2px solid white;
+            animation: typing 3s steps(50) 1s 1 normal both, blink 0.7s step-end infinite;
+        }
+        
+        .blink {
+            border-right: 2px solid white;
         }
 
-        /* Laggy typing animation */
         @keyframes typing {
             from {
                 width: 0;
             }
             to {
-                width: 100%; /* Full width of the text */
+                width: 100%;
             }
         }
 
-        /* Blinking cursor effect (only for last paragraph) */
         @keyframes blink {
             50% {
-                border-color: transparent; /* Hide the cursor */
+                border-color: transparent;
             }
         }
 
-        /* Delay for each paragraph */
-        .paragraph-1 {
-            animation-delay: 0s; /* First paragraph starts immediately */
+        .small {
+            font-size: 14px;
         }
-
-        .paragraph-2 {
-            animation-delay: 3s; /* Second paragraph starts after 3 seconds */
-        }
-
-        .paragraph-3 {
-            animation-delay: 6s; /* Third paragraph starts after 6 seconds */
-        }
-
-        .paragraph-4 {
-            animation-delay: 9s; /* Fourth paragraph starts after 9 seconds */
-            font-size: 16px; /* Adjust font size */
-            margin-top: 5px; /* Adjust margin to reduce space between paragraphs */
-            margin-bottom: 5px; /* Reduce bottom margin */
-            animation: typing 1s steps(40) 0.5s forwards, blink 0.75s step-end infinite; /* Apply blinking cursor here */
-        }
-
-        /* Reduced spacing for last three paragraphs */
-        p {
-            margin-top: 3px;  /* Less spacing between paragraphs */
-            margin-bottom: 3px;  /* Less spacing between paragraphs */
-        }
-
-        /* Remove margin for h1 */
-        h1 {
-            margin: 0;
-        }
+        
     </style>
 </head>
 <body>
-    <div class="centered-text">
-      <h1 class="typing paragraph-1">Adam Brůha</h1>
-      <p class="typing paragraph-2">tel.: +420 731 523 427</p>
-      <p class="typing paragraph-3">email: ab.bruha@gmail.com</p>
-      <p class="typing paragraph-4">(I can also be reached on Signal)</p>
+    <div class="container">
+        <div class="typing">
+            <strong>Adam Brůha</strong>
+        </div>
+        <div class="typing">
+            Tel.: +420 731 523 427
+        </div>
+        <div class="typing">
+            Email: ab.bruha@gmail.com
+        </div>
+        <div class="typing small">
+            (I can also be reached on Signal)
+        </div>
     </div>
+
+    <script>
+        // Adjusting text for choppy effect by adding delay after each letter
+        document.querySelectorAll('.typing').forEach(function (element) {
+            let text = element.innerHTML;
+            element.innerHTML = '';
+            let i = 0;
+            let speed = 100; // Adjust speed here
+
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        });
+    </script>
 </body>
 </html>
