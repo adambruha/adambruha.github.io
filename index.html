@@ -70,22 +70,9 @@
         .typing4 {
             animation: typing 2s steps(30) 6s forwards, blink 0.75s step-end infinite;
         }
-
-        /* Paragraph 5: "Feel free to contact me" typing animation */
-        .typing5 {
-            animation: typing 2s steps(22) 8s forwards;
+         .typing5 {
+            animation: typing 2s steps(22) 8s forwards, blink 0.75s step-end infinite;
         }
-
-        /* Blinking cursor animation for the final text */
-        .blink-cursor {
-            display: inline-block;
-            width: 3px;
-            height: 24px;
-            background-color: white;
-            animation: blink 0.75s step-end infinite;
-            margin-left: 2px; /* Small gap between text and cursor */
-        }
-
     </style>
 </head>
 <body>
@@ -104,10 +91,8 @@
             <p style="font-size: 14px;">(I can also be reached on Signal)</p>
         </div>
         <div class="typing typing5">
-            <p>Feel free to contact me</p>
+            <p>Feel free to contact me :)</p>
         </div>
-        <!-- Add a blinking cursor after the last sentence finishes typing -->
-        <div class="blink-cursor"></div>
     </div>
 </body>
 </html>
