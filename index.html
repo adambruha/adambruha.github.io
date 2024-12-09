@@ -23,14 +23,12 @@
             font-size: 24px;
             text-align: center;
             display: inline-block;
+            white-space: nowrap;
         }
 
-        /* Typing animation for each paragraph */
+        /* General typing effect setup */
         .typing {
             overflow: hidden; /* Hide the text while it's being typed */
-            border-right: 3px solid white; /* Cursor-like effect */
-            width: 0; /* Start with width 0 */
-            white-space: nowrap; /* Prevent line breaks */
             display: inline-block;
         }
 
@@ -51,29 +49,55 @@
             }
         }
 
-        /* Paragraph 1: "Adam Brůha" typing animation */
+        /* Paragraphs with individual typing animations and cursor delay */
         .typing1 {
-            animation: typing 2s steps(12) 0s forwards, blink 0.75s step-end infinite;
+            animation: typing 2s steps(12) 0s forwards;
         }
 
-        /* Paragraph 2: "email" typing animation */
         .typing2 {
-            animation: typing 2s steps(20) 2s forwards, blink 0.75s step-end infinite;
+            animation: typing 2s steps(20) 2s forwards;
         }
 
-        /* Paragraph 3: "tel." typing animation */
         .typing3 {
-            animation: typing 2s steps(23) 4s forwards, blink 0.75s step-end infinite;
+            animation: typing 2s steps(23) 4s forwards;
         }
 
-        /* Paragraph 4: "Signal" typing animation */
         .typing4 {
-            animation: typing 2s steps(30) 6s forwards, blink 0.75s step-end infinite;
+            animation: typing 2s steps(30) 6s forwards;
         }
 
-        /* Paragraph 5: "Feel free to contact me" typing animation */
         .typing5 {
-            animation: typing 2s steps(22) 8s forwards, blink 0.75s step-end infinite;
+            animation: typing 2s steps(22) 8s forwards;
+        }
+
+        /* Cursor setup - only one visible at a time */
+        .cursor {
+            display: inline-block;
+            border-right: 3px solid white; /* Cursor-like effect */
+            animation: blink 0.75s step-end infinite;
+            width: 0;
+            visibility: hidden; /* Hide cursor initially */
+        }
+
+        /* Delay cursor appearance */
+        .cursor1 {
+            animation-delay: 2s; /* Delay for when the first animation completes */
+        }
+
+        .cursor2 {
+            animation-delay: 4s; /* Delay for when the second animation completes */
+        }
+
+        .cursor3 {
+            animation-delay: 6s; /* Delay for when the third animation completes */
+        }
+
+        .cursor4 {
+            animation-delay: 8s; /* Delay for when the fourth animation completes */
+        }
+
+        .cursor5 {
+            animation-delay: 10s; /* Delay for when the fifth animation completes */
         }
     </style>
 </head>
@@ -95,6 +119,13 @@
         <div class="typing typing5">
             <p>Feel free to contact me</p>
         </div>
+
+        <!-- Only one cursor is visible at a time based on the animation delays -->
+        <div class="cursor cursor1"></div>
+        <div class="cursor cursor2"></div>
+        <div class="cursor cursor3"></div>
+        <div class="cursor cursor4"></div>
+        <div class="cursor cursor5"></div>
     </div>
 </body>
 </html>
