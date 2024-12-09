@@ -22,16 +22,16 @@
         .centered-text {
             font-size: 24px;
             text-align: center;
-            white-space: nowrap; /* Prevent line breaks */
             display: inline-block;
         }
 
-        /* Typing animation */
+        /* Typing animation for each paragraph */
         .typing {
             overflow: hidden; /* Hide the text while it's being typed */
             border-right: 3px solid white; /* Cursor-like effect */
             width: 0; /* Start with width 0 */
-            animation: typing 5s steps(40) 1s forwards, blink 0.75s step-end infinite; /* Typing effect */
+            white-space: nowrap; /* Prevent line breaks */
+            display: inline-block;
         }
 
         /* Keyframe for typing animation */
@@ -50,14 +50,41 @@
                 border-color: transparent; /* Blink effect for cursor */
             }
         }
+
+        /* Paragraph 1: "Adam Brůha" typing animation */
+        .typing1 {
+            animation: typing 2s steps(12) 0s forwards, blink 0.75s step-end infinite;
+        }
+
+        /* Paragraph 2: "tel." typing animation */
+        .typing2 {
+            animation: typing 2s steps(20) 2s forwards, blink 0.75s step-end infinite;
+        }
+
+        /* Paragraph 3: "email" typing animation */
+        .typing3 {
+            animation: typing 2s steps(23) 4s forwards, blink 0.75s step-end infinite;
+        }
+
+        /* Paragraph 4: "Signal" typing animation */
+        .typing4 {
+            animation: typing 2s steps(30) 6s forwards, blink 0.75s step-end infinite;
+        }
     </style>
 </head>
 <body>
     <div class="centered-text">
-        <div class="typing">
-            <h1>Adam Brůha</h1>
+        <!-- Text paragraphs with individual typing animations -->
+        <div class="typing typing1">
+            Adam Brůha
+        </div>
+        <div class="typing typing2">
             <p>tel.: +420 731 523 427</p>
+        </div>
+        <div class="typing typing3">
             <p>email: ab.bruha@gmail.com</p>
+        </div>
+        <div class="typing typing4">
             <p style="font-size: 16px;">(I can also be reached on Signal)</p>
         </div>
     </div>
