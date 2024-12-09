@@ -23,13 +23,13 @@
             font-size: 24px;
             text-align: center;
             display: inline-block;
-            white-space: nowrap;
         }
 
         /* General typing effect setup */
         .typing {
             overflow: hidden; /* Hide the text while it's being typed */
             display: inline-block;
+            position: relative; /* Position relative to allow for cursor positioning */
         }
 
         /* Keyframe for typing animation */
@@ -70,33 +70,35 @@
             animation: typing 2s steps(22) 8s forwards;
         }
 
-        /* Cursor setup - only one visible at a time */
-        .cursor {
+        /* Cursor setup - single cursor will be created with ::after */
+        .typing::after {
+            content: '';
             display: inline-block;
+            width: 0;
             border-right: 3px solid white; /* Cursor-like effect */
             animation: blink 0.75s step-end infinite;
-            width: 0;
-            visibility: hidden; /* Hide cursor initially */
+            position: absolute;
+            right: 0;
         }
 
-        /* Delay cursor appearance */
-        .cursor1 {
+        /* Delay cursor visibility after each typing animation */
+        .typing1::after {
             animation-delay: 2s; /* Delay for when the first animation completes */
         }
 
-        .cursor2 {
+        .typing2::after {
             animation-delay: 4s; /* Delay for when the second animation completes */
         }
 
-        .cursor3 {
+        .typing3::after {
             animation-delay: 6s; /* Delay for when the third animation completes */
         }
 
-        .cursor4 {
+        .typing4::after {
             animation-delay: 8s; /* Delay for when the fourth animation completes */
         }
 
-        .cursor5 {
+        .typing5::after {
             animation-delay: 10s; /* Delay for when the fifth animation completes */
         }
     </style>
@@ -119,13 +121,6 @@
         <div class="typing typing5">
             <p>Feel free to contact me</p>
         </div>
-
-        <!-- Only one cursor is visible at a time based on the animation delays -->
-        <div class="cursor cursor1"></div>
-        <div class="cursor cursor2"></div>
-        <div class="cursor cursor3"></div>
-        <div class="cursor cursor4"></div>
-        <div class="cursor cursor5"></div>
     </div>
 </body>
 </html>
