@@ -21,11 +21,16 @@
         .centered-text {
             font-size: 24px;
             text-align: center;
+        }
+
+        /* Common typing animation for each paragraph */
+        .typing {
+            display: inline-block;
             white-space: nowrap; /* Prevent text from wrapping */
             overflow: hidden; /* Hide the text until it is "typed" */
             border-right: 4px solid white; /* Simulate a cursor */
             width: 0; /* Start with no visible width */
-            animation: typing 5s steps(30) 1s forwards, blink 0.75s step-end infinite; /* Typing and blinking cursor */
+            animation: typing 2s steps(30) 0.5s forwards, blink 0.75s step-end infinite; /* Typing and blinking cursor */
         }
 
         /* Typing animation */
@@ -45,7 +50,25 @@
             }
         }
 
-        /* Styling for h1 to remove its margin */
+        /* Delay for each paragraph */
+        .paragraph-1 {
+            animation-delay: 0s; /* First paragraph starts immediately */
+        }
+
+        .paragraph-2 {
+            animation-delay: 3s; /* Second paragraph starts after 3 seconds */
+        }
+
+        .paragraph-3 {
+            animation-delay: 6s; /* Third paragraph starts after 6 seconds */
+        }
+
+        .paragraph-4 {
+            animation-delay: 9s; /* Fourth paragraph starts after 9 seconds */
+            font-size: 16px; /* Adjust font size */
+        }
+
+        /* Remove margin for h1 */
         h1 {
             margin: 0;
         }
@@ -53,10 +76,10 @@
 </head>
 <body>
     <div class="centered-text">
-      <h1>Adam Brůha</h1>
-      <p>tel.: +420 731 523 427</p>
-      <p>email: ab.bruha@gmail.com</p>
-      <p style="font-size: 16px;">(I can also be reached on Signal)</p>
+      <h1 class="typing paragraph-1">Adam Brůha</h1>
+      <p class="typing paragraph-2">tel.: +420 731 523 427</p>
+      <p class="typing paragraph-3">email: ab.bruha@gmail.com</p>
+      <p class="typing paragraph-4">(I can also be reached on Signal)</p>
     </div>
 </body>
 </html>
