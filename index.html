@@ -28,23 +28,26 @@
             font-size: 18px;
             line-height: 1.5;
         }
-        
+
         .typing {
             display: inline-block;
             border-right: 2px solid white;
-            animation: typing 3s steps(50) 1s 1 normal both, blink 0.7s step-end infinite;
+            animation: typing 3s steps(50) 1s normal both, blink 0.7s step-end infinite;
+            opacity: 0; /* Start invisible */
         }
-        
-        .blink {
-            border-right: 2px solid white;
+
+        .small {
+            font-size: 14px;
         }
 
         @keyframes typing {
             from {
                 width: 0;
+                opacity: 0;
             }
             to {
                 width: 100%;
+                opacity: 1;
             }
         }
 
@@ -54,34 +57,39 @@
             }
         }
 
-        .small {
-            font-size: 14px;
+        /* Animation delays */
+        .delayed-1 {
+            animation-delay: 0s;
         }
         
+        .delayed-2 {
+            animation-delay: 3s; /* Starts after 3s */
+        }
+
+        .delayed-3 {
+            animation-delay: 6s; /* Starts after 6s */
+        }
+
+        .delayed-4 {
+            animation-delay: 9s; /* Starts after 9s */
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-       <h>
-        <div class="typing">
-            Adam Brůha
+        <div class="typing delayed-1">
+            <strong>Adam Brůha</strong>
         </div>
-    </h>
-        <p>
-        <div class="typing">
+        <div class="typing delayed-2">
             Tel.: +420 731 523 427
         </div>
-    </p>
-        <p>
-        <div class="typing">
+        <div class="typing delayed-3">
             Email: ab.bruha@gmail.com
         </div>
-    </p>
-        <p>
-        <div class="typing small">
+        <div class="typing small delayed-4">
             (I can also be reached on Signal)
         </div>
-    </p>
     </div>
 
     <script>
