@@ -4,130 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Card</title>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&display=swap" rel="stylesheet">
     <style>
-        body {
+        /* Make the body fill the entire page with a black background */
+        body, html {
+            height: 100%;
             margin: 0;
-            padding: 0;
-            font-family: 'Courier Prime', monospace;
-            background-color: black;
-            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            background-color: black; /* Black background */
+            color: white; /* White text */
+            font-family: Arial, sans serif; /* Optional: Set a default font */
+        }
+
+        /* Centered text styling */
+        .centered-text {
+            font-size: 24px;
             text-align: center;
-            overflow: hidden;
         }
-        
-        .container {
-            width: 90%;
-            max-width: 400px;
-            white-space: nowrap;
-            overflow: hidden;
-            font-size: 18px;
-            line-height: 1.5;
-        }
-
-        .typing {
-            display: inline-block;
-            border-right: 2px solid white;
-            animation: typing 3s steps(50) 1s normal both, blink 0.7s step-end infinite;
-            opacity: 0; /* Start invisible */
-        }
-
-        .small {
-            font-size: 14px;
-        }
-
-        @keyframes typing {
-            from {
-                width: 0;
-                opacity: 0;
-            }
-            to {
-                width: 100%;
-                opacity: 1;
-            }
-        }
-
-        @keyframes blink {
-            50% {
-                border-color: transparent;
-            }
-        }
-
-        /* Animation delays */
-        .delayed-1 {
-            animation-delay: 0s;
-        }
-        
-        .delayed-2 {
-            animation-delay: 3s; /* Starts after 3s */
-        }
-
-        .delayed-3 {
-            animation-delay: 6s; /* Starts after 6s */
-        }
-
-        .delayed-4 {
-            animation-delay: 9s; /* Starts after 9s */
-        }
-
-        /* Cursor styling for last element */
-        .typing:last-child {
-            animation: typing 3s steps(50) 1s normal both, blink 0.7s step-end infinite, stay 1s forwards;
-        }
-
-        @keyframes stay {
-            to {
-                width: 100%;
-                opacity: 1;
-                border-right: 2px solid white;
-            }
-        }
-
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="typing delayed-1">
-            <strong>Adam Brůha</strong>
-        </div>
-        <p>
-        <div class="typing delayed-2">
-            Tel.: +420 731 523 427
-        </div>
-    </p>
-        <p>
-        <div class="typing delayed-3">
-            Email: ab.bruha@gmail.com
-        </div>
-       </p>
-        <p>
-        <div class="typing small delayed-4">
-            (I can also be reached on Signal)
-        </div>
-    </p>
+    <div class="centered-text">
+      <p>
+        <h1>Adam Brůha</h1>
+      </p>
+      <p>tel.: +420 731 523 427</p>
+      <p>email: ab.bruha@gmail.com</p>
+      <p style="font-size: 16px;">(I can also be reached on Signal)</p>
     </div>
-
-    <script>
-        // Adjusting text for choppy effect by adding delay after each letter
-        document.querySelectorAll('.typing').forEach(function (element) {
-            let text = element.innerHTML;
-            element.innerHTML = '';
-            let i = 0;
-            let speed = 100; // Adjust speed here
-
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        });
-    </script>
 </body>
 </html>
