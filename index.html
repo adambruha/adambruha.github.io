@@ -74,6 +74,19 @@
             animation-delay: 9s; /* Starts after 9s */
         }
 
+        /* Cursor styling for last element */
+        .typing:last-child {
+            animation: typing 3s steps(50) 1s normal both, blink 0.7s step-end infinite, stay 1s forwards;
+        }
+
+        @keyframes stay {
+            to {
+                width: 100%;
+                opacity: 1;
+                border-right: 2px solid white;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -81,15 +94,21 @@
         <div class="typing delayed-1">
             <strong>Adam Brůha</strong>
         </div>
+        <p>
         <div class="typing delayed-2">
             Tel.: +420 731 523 427
         </div>
+    </p>
+        <p>
         <div class="typing delayed-3">
             Email: ab.bruha@gmail.com
         </div>
+       </p>
+        <p>
         <div class="typing small delayed-4">
             (I can also be reached on Signal)
         </div>
+    </p>
     </div>
 
     <script>
