@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Card</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .business-card {
+            text-align: center;
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+        }
+        .name {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="business-card">
+        <div class="name">Adam Brůha</div>
+        <div class="contact-info">
+            <div>personal email: <a href="mailto:ab.bruha@gmail.com">ab.bruha@gmail.com</a></div>
+            <div>school email: <a href="mailto:bruhaa@natur.cuni.cz">bruhaa@natur.cuni.cz</a></div>
+            <div>tel.: <a href="tel:+420731523427">+420 731 523 427</a></div>
+        </div>
+    </div>
+</body>
+</html>
