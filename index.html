@@ -19,10 +19,10 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background-image: url('https://i.ibb.co/n87VGPkc/DSCN2194.jpg');
+            background-image: url('https://example.com/your-image.jpg'); /* Replace with your image URL */
             background-size: cover;
             background-position: center;
-            z-index: -1;
+            z-index: -1; /* Places the image behind other content */
         }
 
         .container {
@@ -48,9 +48,11 @@
         .icons-container {
             display: flex;
             justify-content: center;
-            position: relative;
+            position: fixed; /* Fix the position of the icons at the bottom */
+            left: 50%;
+            bottom: 30px; /* Adjust the space from the bottom */
+            transform: translateX(-50%); /* Center the icons horizontally */
             z-index: 1;
-            margin-top: 30px;
         }
 
         .fade {
@@ -58,7 +60,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 200px;
+            height: 400px; /* Increased height of the fade effect */
             background: linear-gradient(to top, black, transparent);
             z-index: 0;
         }
@@ -72,9 +74,9 @@
     </style>
 </head>
 <body>
-    <div class="hero-image"></div>
+    <div class="hero-image"></div> <!-- Background image of the person -->
     
-    <div class="fade"></div>
+    <div class="fade"></div> <!-- Larger fade effect at the bottom -->
 
     <div class="container icons-container">
         <a href="tel:+420731523427">
