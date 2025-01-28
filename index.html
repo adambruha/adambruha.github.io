@@ -11,8 +11,8 @@
             font-family: Helvetica, sans-serif;
             background-color: black;
             color: white;
-            height: 100vh; /* Full viewport height */
-            display: flex; /* Using flexbox for centering */
+            height: 100%; /* Adjusting height to avoid issues on mobile */
+            display: flex;
             flex-direction: column;
             justify-content: flex-end; /* Align content to the bottom */
             align-items: center; /* Center horizontally */
@@ -62,8 +62,17 @@
 
         /* Responsive styles */
         @media (max-width: 768px) {
+            body {
+                height: auto; /* Allow body height to adjust on mobile */
+                padding-bottom: 20px; /* Avoid black lip from appearing */
+            }
+
+            .hero-image {
+                height: 100%; /* Allow image height to adjust */
+            }
+
             .icons-container {
-                bottom: 15px; /* Adjust space from the bottom on mobile */
+                bottom: 20px; /* Keep spacing from the bottom */
             }
 
             a img {
