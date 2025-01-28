@@ -46,14 +46,15 @@
             margin: 10px;
         }
 
+        /* Position the icons container */
         .icons-container {
+            position: absolute;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            z-index: 1;
             display: flex;
             justify-content: center;
-            position: fixed;
-            left: 50%;
-            bottom: 30px; /* Adjust the space from the bottom */
-            transform: translateX(-50%); /* Center the icons horizontally */
-            z-index: 1;
         }
 
         .fade {
@@ -69,12 +70,12 @@
         /* Responsive styles */
         @media (max-width: 768px) {
             .icons-container {
-                bottom: 15px; /* Adjust the space from the bottom on mobile */
+                bottom: 15px; /* Adjust space from the bottom on mobile */
             }
 
             a img {
-                max-width: 100px; /* Reduce icon size on mobile */
-                margin: 5px; /* Reduce margin on mobile */
+                max-width: 100px; /* Resize icons on mobile */
+                margin: 5px; /* Reduce space between icons */
             }
         }
     </style>
