@@ -21,7 +21,7 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background-image: url('https://i.ibb.co/N4tBkzG/DSCN2194.jpg');
+            background-image: url('https://i.ibb.co/60919PZF/DSCN2194.jpg');
             background-size: cover;
             background-position: center;
             z-index: -1;
@@ -61,10 +61,21 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 500px; /*adjusted height*/
-            background: linear-gradient(to top, black, transparent 99%); /*fade*/
+            height: 500px; /* Adjusted height */
+            background: linear-gradient(to top, black, transparent 99%); /* Fade */
             z-index: 0;
+        }
 
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .icons-container {
+                bottom: 15px; /* Adjust the space from the bottom on mobile */
+            }
+
+            a img {
+                max-width: 100px; /* Reduce icon size on mobile */
+                margin: 5px; /* Reduce margin on mobile */
+            }
         }
     </style>
 </head>
