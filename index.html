@@ -11,12 +11,12 @@
             font-family: Helvetica, sans-serif;
             background-color: black;
             color: white;
-            height: 100%; /* Ensure body takes full height */
+            height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end; /* Align content to the bottom */
-            align-items: center; /* Center horizontally */
-            overflow: hidden; /* Prevent scrolling */
+            justify-content: flex-end;
+            align-items: center;
+            overflow: hidden;
         }
 
         .hero-image {
@@ -41,42 +41,39 @@
             width: 100%;
             max-width: 140px;
             height: auto;
-            margin: 10px; /* Keep margin for spacing between icons */
+            margin: 10px;
         }
 
-        /* Flexbox container for the icons */
         .icons-container {
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            position: absolute; /* Position at the bottom */
-            bottom: 20px; /* Adjust space from the bottom */
-            width: 100%; /* Ensure full width for the container */
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
             z-index: 1;
         }
 
-        /* Responsive styles */
         @media (max-width: 768px) {
             body {
-                height: auto; /* Allow body height to adjust on mobile */
-                padding-bottom: 20px; /* Avoid black lip from appearing */
+                height: auto;
                 display: flex;
                 justify-content: flex-end;
-                align-items: center; /* Align content to center */
+                align-items: center;
             }
 
             .hero-image {
-                height: 100%; /* Ensure the image is fully responsive */
+                height: 100%;
             }
 
             .icons-container {
-                bottom: 20px; /* Keep spacing from the bottom */
-                width: 100%; /* Ensure the container spans full width */
+                bottom: 20px;
+                width: 100%;
             }
 
             a img {
-                max-width: 100px; /* Resize icons on mobile */
-                margin: 5px; /* Reduce space between icons */
+                max-width: 100px;
+                margin: 7px;
             }
         }
     </style>
