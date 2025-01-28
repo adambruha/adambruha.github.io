@@ -11,7 +11,7 @@
             font-family: Helvetica, sans-serif;
             background-color: black;
             color: white;
-            height: 100%; /* Adjusting height to avoid issues on mobile */
+            height: 100%; /* Ensure body takes full height */
             display: flex;
             flex-direction: column;
             justify-content: flex-end; /* Align content to the bottom */
@@ -51,6 +51,7 @@
             align-items: center; /* Center vertically */
             position: absolute; /* Position at the bottom */
             bottom: 20px; /* Adjust space from the bottom */
+            width: 100%; /* Ensure full width for the container */
             z-index: 1;
         }
 
@@ -59,14 +60,18 @@
             body {
                 height: auto; /* Allow body height to adjust on mobile */
                 padding-bottom: 20px; /* Avoid black lip from appearing */
+                display: flex;
+                justify-content: flex-end;
+                align-items: center; /* Align content to center */
             }
 
             .hero-image {
-                height: 100%; /* Allow image height to adjust */
+                height: 100%; /* Ensure the image is fully responsive */
             }
 
             .icons-container {
                 bottom: 20px; /* Keep spacing from the bottom */
+                width: 100%; /* Ensure the container spans full width */
             }
 
             a img {
