@@ -6,85 +6,102 @@
     <title>Adam Brůha</title>
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co/s9x1B4Y/favicon-32x32.png">
     <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, sans-serif;
+        background-color: black;
+        color: white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .hero-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-image: url('https://i.ibb.co/60919PZF/DSCN2194.jpg');
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+
+    body::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background: linear-gradient(to top, black 50%, transparent 100%);
+        z-index: 0;
+    }
+
+    a {
+        display: inline-block;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    a img {
+        width: 95%;
+        max-width: 140px;
+        height: auto;
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    a:hover img {
+        transform: scale(1.2);
+        opacity: 1;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .icons-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 5%;
+        width: 100%;
+        z-index: 1;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @media {
         body {
-            margin: 0;
-            padding: 0;
-            font-family: Helvetica, sans-serif;
-            background-color: black;
-            color: white;
-            height: 100%;
+            height: auto;
             display: flex;
-            flex-direction: column;
             justify-content: flex-end;
             align-items: center;
-            overflow: hidden;
         }
 
         .hero-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-image: url('https://i.ibb.co/60919PZF/DSCN2194.jpg');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-        }
-
-        body::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 40%;
-            background: linear-gradient(to top, black 50%, transparent 100%);
-            z-index: 0;
-        }
-        
-        a {
-            display: inline-block;
-            color: #FFFFFF;
-            text-decoration: none;
-        }
-
-        a img {
-            width: 95%;
-            max-width: 140px;
-            height: auto;
+            height: 100%;
         }
 
         .icons-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
             bottom: 5%;
             width: 100%;
-            z-index: 1;
+            justify-content: center;
+            align-items: center;
         }
-
-        @media {
-            body {
-                height: auto;
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-            }
-
-            .hero-image {
-                height: 100%;
-            }
-
-            .icons-container {
-                bottom: 5%;
-                width: 100%;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
     <div class="hero-image"></div>
