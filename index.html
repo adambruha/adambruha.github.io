@@ -20,17 +20,27 @@
         overflow: hidden;
     }
 
-    .hero-image {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-image: url('https://i.ibb.co/TxLv61HS/Screenshot-20250319-151334-Gallery.jpg" alt="Screenshot-20250319-151334-Gallery');
-        background-size: cover;
-        background-position: center;
-        z-index: -1;
-    }
+    .hero-bg {
+    position: fixed;
+    inset: 0;
+    background-image: url('https://i.ibb.co/TxLv61HS/Screenshot-20250319-151334-Gallery.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(30px) brightness(0.8);
+    transform: scale(1.1); /* prevents blur edges */
+    z-index: -2;
+}
+
+.hero-image {
+    position: fixed;
+    inset: 0;
+    background-image: url('https://i.ibb.co/TxLv61HS/Screenshot-20250319-151334-Gallery.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+}
+
 
     body::before {
         content: "";
@@ -116,7 +126,9 @@ a[href*="wa.me"]:hover img {
 </style>
 </head>
 <body>
+    <div class="hero-bg"></div>
     <div class="hero-image"></div>
+
     
     <div class="icons-container">
         <a href="mailto:ab.bruha@gmail.com">
